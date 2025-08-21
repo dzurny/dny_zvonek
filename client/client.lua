@@ -10,7 +10,7 @@ local function canRing()
     
     if timeSinceLastRing < Dny.Cooldown then
         local remainingTime = math.ceil(Dny.Cooldown - timeSinceLastRing)
-        lib.notify({
+        exports.ox_lib:notify({
             title = Dny.Locale.title,
             description = string.format(Dny.Locale.cooldown, remainingTime),
             type = 'error'
@@ -54,7 +54,7 @@ local function createTargets()
                         }
                         
                         exports['cd_dispatch']:AddNotification(dispatchData)
-                        lib.notify({
+                        exports.ox_lib:notify({
                             title = Dny.Locale.title,
                             description = Dny.Locale.zazvonil,
                             type = 'success'
